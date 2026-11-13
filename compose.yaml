@@ -1,5 +1,13 @@
 
 services:
+  milk-store:
+    build:
+      context: ./milk-store-web
+    image: milk-store:v1
+    container_name: milk-store
+    ports:
+      - "8888:80"
+    restart: unless-stopped
   cadvisor:
     image: ghcr.io/google/cadvisor:v0.53.0
     container_name: monitoring-cadvisor
